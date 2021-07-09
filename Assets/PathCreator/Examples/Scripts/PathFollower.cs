@@ -34,5 +34,7 @@ namespace PathCreation.Examples
         void OnPathChanged() {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
+
+        
     }
 }
