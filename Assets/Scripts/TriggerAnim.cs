@@ -5,9 +5,11 @@ using UnityEngine;
 public class TriggerAnim : MonoBehaviour
 {
     public Animator anim;
+    //public Animator strobe;
 
     public void OnMouseDown()
     {
         anim.SetBool("Active", true);
+        //strobe.SetBool("Strobe", true);
     }
 }

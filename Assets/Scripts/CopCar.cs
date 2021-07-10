@@ -5,17 +5,17 @@ using UnityEngine;
 public class CopCar : MonoBehaviour
 {
     public ParticleSystem smoke;
-    public ParticleSystem smoke1;
     public Animator copCar;
 
     public string PathFollower;
     public GameObject cop;
+    public GameObject arrest;
+    public GameObject trafficLight;
 
 
     void Start()
     {
         smoke.Stop();
-        smoke1.Stop();
         copCar = gameObject.GetComponent<Animator>();
 
     }
@@ -26,14 +26,12 @@ public class CopCar : MonoBehaviour
         {
             copCar.SetBool("KoliaLeft", true);
             smoke.Play();
-            smoke1.Play();
         }
 
         if (other.tag == "KoliaRight")
         {
             copCar.SetBool("KoliaRight", true);
             smoke.Play();
-            smoke1.Play();
 
         }
 
@@ -42,7 +40,7 @@ public class CopCar : MonoBehaviour
             copCar.SetBool("Boom", true);
             //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
-
+            arrest.SetActive(false);
 
         }
 
@@ -52,6 +50,16 @@ public class CopCar : MonoBehaviour
             //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             //(cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
 
+            StartCoroutine(CopCoroutine());
+
+        } 
+        
+        if (other.tag == "Arrest")
+        {
+            copCar.SetBool("Busted", true);
+            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
+            //(cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            trafficLight.SetActive(false);
             StartCoroutine(CopCoroutine());
 
         }
@@ -64,7 +72,6 @@ public class CopCar : MonoBehaviour
         copCar.SetBool("KoliaLeft", false);
         copCar.SetBool("KoliaRight", false);
         smoke.Stop();
-        smoke1.Stop();
 
 
     }

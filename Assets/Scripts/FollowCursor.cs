@@ -21,7 +21,7 @@ public class FollowCursor : MonoBehaviour
 
         if (mouse < 400) ;
         {
-            Debug.Log(Input.mousePosition.x);
+            //Debug.Log(Input.mousePosition.x);
         }
 
         /*if (Input.GetKey(KeyCode.Mouse0))

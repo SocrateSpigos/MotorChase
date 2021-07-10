@@ -8,6 +8,10 @@ TagManager:
   - KoliaRight
   - LampPost
   - TrafficLight
+  - Arrest
+  - CopTrigger
+  - Target
+  - Target2
   layers:
   - Default
   - TransparentFX

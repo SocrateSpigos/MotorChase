@@ -33,6 +33,7 @@ public class TargetSelector : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.GetComponent<ChangeColor>() !=null)
                 {
+                  
                     Vector3 distanceToTarget = hitInfo.point - transform.position;
                     Vector3 forceDirection = distanceToTarget.normalized;
                     Debug.Log("Clicked");
