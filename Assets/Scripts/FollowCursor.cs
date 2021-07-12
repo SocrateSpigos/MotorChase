@@ -6,7 +6,7 @@ public class FollowCursor : MonoBehaviour
 {
     Camera cam;
     private float mouse;
-    
+    public GameObject shoot;
     
     void Start()
     {
@@ -19,27 +19,14 @@ public class FollowCursor : MonoBehaviour
         transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5));
 
 
-        if (mouse < 400) ;
+        Destroy(shoot, 2f);
+
+
+        if (Input.GetKey(KeyCode.Mouse0))
+
         {
-            //Debug.Log(Input.mousePosition.x);
+            Instantiate(shoot, transform.position, transform.rotation);
         }
-
-        /*if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if(Input.mousePosition.x > 250);
-            {
-                Debug.Log("Right");
-                Debug.Log(Input.mousePosition.x);
-
-            }
-
-            if (Input.mousePosition.x < 250) ;
-            {
-                Debug.Log("Left");
-                Debug.Log(Input.mousePosition.x);
-            }
-         }*/
-
 
     }
 
