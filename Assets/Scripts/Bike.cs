@@ -7,10 +7,14 @@ public class Bike : MonoBehaviour
     public Animator bike;
     public Animator target1;
     public Animator target2;
+    public Animator target3;
     public string PathFollower;
+
     public GameObject biker;
     public GameObject cam;
     public GameObject ThirdCop;
+    public GameObject FourthCop;
+
     public ParticleSystem smokeTrail;
 
     // Start is called before the first frame update
@@ -23,7 +27,8 @@ public class Bike : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "KoliaLeft")
-        {            smokeTrail.Play();
+        {            
+            smokeTrail.Play();
 
             bike.SetBool("KoliaLeft", true);
         }
@@ -31,6 +36,11 @@ public class Bike : MonoBehaviour
         if (other.tag == "CopTrigger")
         {
             ThirdCop.SetActive(true);
+        }
+        
+        if (other.tag == "SecondCopTrigger")
+        {
+            FourthCop.SetActive(true);
         }
         
         
@@ -46,13 +56,24 @@ public class Bike : MonoBehaviour
         {
             smokeTrail.Play();
 
-            Debug.Log("Busted");
             bike.SetBool("Busted", true);
             GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
 
 
 
             StartCoroutine(BikeCoroutine());
+
+        }
+
+        if (other.tag == "Success")
+        {
+            smokeTrail.Play();
+
+            bike.SetBool("Busted", true);
+
+            StartCoroutine(BikeCoroutine());
+
+
 
         }
 
@@ -65,11 +86,17 @@ public class Bike : MonoBehaviour
         {
             target1.SetBool("Active", true);
         }
-        
+
         if (other.tag == "Target2")
         {
             Debug.Log("Hit");
             target2.SetBool("Active", true);
+        }
+            
+            if (other.tag == "Target3")
+        {
+            Debug.Log("Hit");
+            target3.SetBool("Active", true);
         }
     }
 

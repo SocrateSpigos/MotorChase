@@ -6,6 +6,7 @@ public class TargetSelector : MonoBehaviour
 {
     public Camera camera;
     public Transform player;
+    public Transform Camera;
     public ParticleSystem gunFire;
     public GameObject light;
 
@@ -48,6 +49,6 @@ public class TargetSelector : MonoBehaviour
         }
     }
 
+   
 
-     
 }

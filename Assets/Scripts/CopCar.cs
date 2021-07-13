@@ -10,6 +10,9 @@ public class CopCar : MonoBehaviour
     public string PathFollower;
     public GameObject cop;
     public GameObject arrest;
+    public GameObject arrest2;
+    public GameObject arrest3;
+    public GameObject success;
     public GameObject trafficLight;
 
 
@@ -47,10 +50,20 @@ public class CopCar : MonoBehaviour
         if (other.tag == "TrafficLight")
         {
             copCar.SetBool("Boom", true);
+            arrest2.SetActive(false);
             //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             //(cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
 
             StartCoroutine(CopCoroutine());
+        }
+
+            if (other.tag == "Bridge")
+            {
+            copCar.SetBool("Boom", true);
+            Debug.Log("Bridge");
+            (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            arrest3.SetActive(false);
+            success.SetActive(true);
 
         } 
         
