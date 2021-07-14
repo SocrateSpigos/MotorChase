@@ -10,7 +10,7 @@ public class BridgeCollapse : MonoBehaviour
 
     void Update()
     {
-      if (leftPillar.activeInHierarchy && leftPillar.activeInHierarchy )
+      if (rightPillar.activeInHierarchy && leftPillar.activeInHierarchy )
         {
           bridge.SetBool("Active",true);
         }

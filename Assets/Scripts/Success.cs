@@ -32,11 +32,16 @@ public class Success : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Success");
+        GameObject.Find("MainCamera").GetComponent<Animator>().enabled = false;
+
         if (other.tag == "Player")
         {
+
             isLerp = true;
+
         }
-        
+
 
     }
 
