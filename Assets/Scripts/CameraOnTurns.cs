@@ -4,11 +4,27 @@ using UnityEngine;
 
 public class CameraOnTurns : MonoBehaviour
 {
-    public Animator CamTurn;
-    
+    //public Animator CamTurn;
+    public Transform Cinematic;
+    public Transform Bike;
+    public float Speed = 3f;
 
-    
-    void OnTriggerEnter(Collider other)
+
+
+    void Start()
+    {
+        PositionChanging();
+    }
+
+
+    void PositionChanging()
+    {
+
+        Cinematic.transform.position = Vector3.Lerp(Cinematic.position, Bike.position, Time.deltaTime * Speed);
+        Cinematic.transform.rotation = Quaternion.Lerp(Cinematic.rotation, Bike.rotation, Time.deltaTime * Speed);
+
+    }
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.tag == "KoliaLeft")
         {
@@ -28,7 +44,7 @@ public class CameraOnTurns : MonoBehaviour
         CamTurn.SetBool("Left", false);
         CamTurn.SetBool("Right", false);
 
-    }
+    }*/
 
 
 

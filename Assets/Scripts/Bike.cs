@@ -14,6 +14,7 @@ public class Bike : MonoBehaviour
     public GameObject cam;
     public GameObject ThirdCop;
     public GameObject FourthCop;
+    public bool canShoot = true;
 
     public ParticleSystem smokeTrail;
 
@@ -55,10 +56,10 @@ public class Bike : MonoBehaviour
         if (other.tag == "Arrest")
         {
             smokeTrail.Play();
+            canShoot = false;
 
             bike.SetBool("Busted", true);
             GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
-
 
 
             StartCoroutine(BikeCoroutine());
