@@ -15,12 +15,24 @@ public class Bike : MonoBehaviour
     public GameObject ThirdCop;
     public GameObject FourthCop;
     public bool canShoot = true;
+    public GameObject gun;
+
+    public GameObject Camera;
+    public Animator cameraAnim;
+    
+    public GameObject Canvas;
+    public Animator canvas;
+    public string LookAt;
+
 
     public ParticleSystem smokeTrail;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        cameraAnim = Camera.GetComponent<Animator>();
+        canvas = Canvas.GetComponent<Animator>();
         bike = gameObject.GetComponent<Animator>();
         smokeTrail.Stop();
     }
@@ -57,8 +69,14 @@ public class Bike : MonoBehaviour
         {
             smokeTrail.Play();
             canShoot = false;
+            gun.SetActive(false);
 
             bike.SetBool("Busted", true);
+            cameraAnim.SetBool("Busted", true);
+            canvas.SetBool("Busted", true);
+            
+            (Camera.GetComponent(LookAt) as MonoBehaviour).enabled = false;
+
             GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
 
 

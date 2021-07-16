@@ -7,10 +7,13 @@ public class FollowCursor : MonoBehaviour
     Camera cam;
     private float mouse;
     public GameObject shoot;
-    
+    public GameObject bike;
+    public bool shootDisabled;
+
     void Start()
     {
         cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        shootDisabled = bike.GetComponent<Bike>().canShoot;
     }
     
     void Update()
@@ -23,9 +26,12 @@ public class FollowCursor : MonoBehaviour
 
 
         if (Input.GetKey(KeyCode.Mouse0))
-
         {
-            Instantiate(shoot, transform.position, transform.rotation);
+            if (!shootDisabled)
+            {
+                Instantiate(shoot, transform.position, transform.rotation);
+            }
+         
         }
 
     }

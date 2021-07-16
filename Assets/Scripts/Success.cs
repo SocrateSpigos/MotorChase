@@ -12,7 +12,9 @@ public class Success : MonoBehaviour
     public GameObject kissCine;
     public GameObject Player;
     public GameObject cam;
+    public GameObject camera;
     public string PathFollower;
+    public string LookAt;
 
 
 
@@ -22,6 +24,7 @@ public class Success : MonoBehaviour
         if (isLerp)
         {
             (cam.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            (camera.GetComponent(LookAt) as MonoBehaviour).enabled = false;
 
             PositionChanging();
             kissCine.SetActive(true);
