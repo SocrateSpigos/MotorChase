@@ -17,12 +17,19 @@ public class Bike : MonoBehaviour
     public bool canShoot = true;
     public GameObject gun;
 
-    public GameObject Camera;
-    public Animator cameraAnim;
+    //public Animator cameraAnim;
     
     public GameObject Canvas;
     public Animator canvas;
+    public GameObject Camera;
     public string LookAt;
+
+    public Transform CameraPos;
+    public Transform NewCameraPos;
+    //public Transform CameraPos;
+    public float Speed = 5f;
+    private bool isLerp = false;
+
 
 
     public ParticleSystem smokeTrail;
@@ -31,14 +38,23 @@ public class Bike : MonoBehaviour
     void Start()
     {
 
-        cameraAnim = Camera.GetComponent<Animator>();
+        //cameraAnim = Camera.GetComponent<Animator>();
         canvas = Canvas.GetComponent<Animator>();
         bike = gameObject.GetComponent<Animator>();
         smokeTrail.Stop();
     }
 
+    void Update()
+    {
+        if (isLerp)
+        {
+            PositionChanging();
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "KoliaLeft")
         {            
             smokeTrail.Play();
@@ -67,21 +83,21 @@ public class Bike : MonoBehaviour
 
         if (other.tag == "Arrest")
         {
+
             smokeTrail.Play();
             canShoot = false;
             gun.SetActive(false);
+            isLerp = true;
 
             bike.SetBool("Busted", true);
-            cameraAnim.SetBool("Busted", true);
+           // cameraAnim.SetBool("Busted", true);
             canvas.SetBool("Busted", true);
             
-            (Camera.GetComponent(LookAt) as MonoBehaviour).enabled = false;
 
             GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
 
 
             StartCoroutine(BikeCoroutine());
-
         }
 
         if (other.tag == "Success")
@@ -125,5 +141,17 @@ public class Bike : MonoBehaviour
         yield return new WaitForSeconds(2f);
         (biker.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
         (cam.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+
+
+    }
+
+    void PositionChanging()
+    {
+        Debug.Log("Changed");
+
+        CameraPos.transform.position = Vector3.Lerp(CameraPos.position, NewCameraPos.position, Time.deltaTime * Speed);
+        CameraPos.transform.rotation = Quaternion.Lerp(CameraPos.rotation, NewCameraPos.rotation, Time.deltaTime * Speed);
+
+
     }
 }
