@@ -27,7 +27,7 @@ public class Bike : MonoBehaviour
     public Transform CameraPos;
     public Transform NewCameraPos;
     //public Transform CameraPos;
-    public float Speed = 5f;
+    public float Speed = 10f;
     private bool isLerp = false;
 
 
@@ -121,7 +121,7 @@ public class Bike : MonoBehaviour
         {
             target1.SetBool("Active", true);
         }
-
+        /*
         if (other.tag == "Target2")
         {
             Debug.Log("Hit");
@@ -132,7 +132,7 @@ public class Bike : MonoBehaviour
         {
             Debug.Log("Hit");
             target3.SetBool("Active", true);
-        }
+        }*/
     }
 
     IEnumerator BikeCoroutine()
