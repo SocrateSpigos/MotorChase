@@ -70,6 +70,8 @@ public class PlayerIk : MonoBehaviour
             Anim.SetIKRotation(AvatarIKGoal.RightHand, RhandPos.rotation);
             Anim.SetIKPositionWeight(AvatarIKGoal.RightHand, RfootIkWeight);
             Anim.SetIKRotationWeight(AvatarIKGoal.RightHand, RfootIkWeight);
+            
+            
 
         }
 
