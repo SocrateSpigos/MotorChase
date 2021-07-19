@@ -28,7 +28,9 @@ public class Bike : MonoBehaviour
     public Transform NewCameraPos;
     //public Transform CameraPos;
     public float Speed = 10f;
-    private bool isLerp = false;
+    public bool isLerp = false;
+    public bool isSuccess = false;
+
 
 
 
@@ -105,7 +107,7 @@ public class Bike : MonoBehaviour
             smokeTrail.Play();
 
             bike.SetBool("Busted", true);
-
+            isSuccess = true;
             StartCoroutine(BikeCoroutine());
 
 

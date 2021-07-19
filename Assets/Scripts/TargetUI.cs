@@ -10,12 +10,13 @@ public class TargetUI : MonoBehaviour
 
     void Start()
     {
-        Target = Instantiate(TargetPrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
 
     }
 
     void Update()
     {
+        Target = Instantiate(TargetPrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>();
+
         Target.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0, 0));
 
     }
