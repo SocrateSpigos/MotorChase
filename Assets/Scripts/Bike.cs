@@ -73,7 +73,7 @@ public class Bike : MonoBehaviour
         
         if (other.tag == "Wheelie")
         {            
-            smokeTrail.Play();
+            
 
             bike.SetBool("Wheelie", true);
             Debug.Log("Wheelie");

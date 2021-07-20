@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class DestroyedVersion : MonoBehaviour
 {
-    public GameObject destroyedVersion;
+    public GameObject cover;
 
-        void OnMouseDown()
+    void OnTriggerEnter(Collider other)
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        if(other.tag == "Player")
+        {
+            Destroy(cover, 1.2f);
+        }
+
     }
 }
