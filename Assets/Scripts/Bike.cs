@@ -64,6 +64,21 @@ public class Bike : MonoBehaviour
             bike.SetBool("KoliaLeft", true);
         }
         
+        if (other.tag == "KoliaRight")
+        {            
+            smokeTrail.Play();
+
+            bike.SetBool("KoliaRight", true);
+        } 
+        
+        if (other.tag == "Wheelie")
+        {            
+            smokeTrail.Play();
+
+            bike.SetBool("Wheelie", true);
+            Debug.Log("Wheelie");
+        }
+        
         if (other.tag == "CopTrigger")
         {
             ThirdCop.SetActive(true);
@@ -82,14 +97,16 @@ public class Bike : MonoBehaviour
     {
 
         bike.SetBool("KoliaLeft", false);
+        bike.SetBool("KoliaRight", false);
+        bike.SetBool("Wheelie", false);
 
         if (other.tag == "Arrest")
         {
+            isLerp = true;
 
             smokeTrail.Play();
             canShoot = false;
             gun.SetActive(false);
-            isLerp = true;
 
             bike.SetBool("Busted", true);
            // cameraAnim.SetBool("Busted", true);
@@ -118,12 +135,12 @@ public class Bike : MonoBehaviour
         {
             smokeTrail.Stop();
         }
-        
+       /* 
         if (other.tag == "Target")
         {
             target1.SetBool("Active", true);
         }
-        /*
+        
         if (other.tag == "Target2")
         {
             Debug.Log("Hit");

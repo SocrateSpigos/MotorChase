@@ -16,6 +16,7 @@ TagManager:
   - Bridge
   - SecondCopTrigger
   - Success
+  - Wheelie
   layers:
   - Default
   - TransparentFX
