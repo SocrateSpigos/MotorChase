@@ -11,6 +11,12 @@ public class TargetSelector : MonoBehaviour
     public GameObject light;
 
 
+    void Awake()
+    {
+        gunFire.Stop();
+
+    }
+
     void Start()
     {
         gunFire.Stop();

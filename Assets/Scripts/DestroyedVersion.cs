@@ -10,7 +10,7 @@ public class DestroyedVersion : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Destroy(cover, 1.2f);
+            Destroy(cover, 1.3f);
         }
 
     }
