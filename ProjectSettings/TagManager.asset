@@ -17,6 +17,7 @@ TagManager:
   - SecondCopTrigger
   - Success
   - Wheelie
+  - PipeTrap
   layers:
   - Default
   - TransparentFX

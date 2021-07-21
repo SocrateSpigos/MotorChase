@@ -38,7 +38,7 @@ public class CopCar : MonoBehaviour
 
         }
 
-        if (other.tag == "LampPost")
+        if (other.tag == "LampPost" || other.tag == "PipeTrap")
         {
             copCar.SetBool("Boom", true);
             //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
@@ -46,6 +46,7 @@ public class CopCar : MonoBehaviour
             arrest.SetActive(false);
 
         }
+
 
         if (other.tag == "TrafficLight")
         {
