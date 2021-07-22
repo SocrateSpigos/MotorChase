@@ -47,6 +47,24 @@ public class CopCar : MonoBehaviour
 
         }
 
+        if (other.tag == "PipeTrap")
+        {
+            copCar.SetBool("Boom", true);
+            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
+            (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            arrest2.SetActive(false);
+
+        }
+
+        if (other.tag == "Billboard")
+        {
+            copCar.SetBool("Boom", true);
+            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
+            (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            arrest.SetActive(false);
+
+        }
+
 
         if (other.tag == "TrafficLight")
         {
@@ -66,7 +84,16 @@ public class CopCar : MonoBehaviour
             arrest3.SetActive(false);
             success.SetActive(true);
 
-        } 
+            } 
+        
+        if (other.tag == "GasTank")
+            {
+            copCar.SetBool("Boom", true);
+            Debug.Log("Bridge");
+            (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
+            arrest3.SetActive(false);
+
+            } 
         
         if (other.tag == "Arrest")
         {

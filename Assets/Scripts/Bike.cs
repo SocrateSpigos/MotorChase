@@ -131,7 +131,7 @@ public class Bike : MonoBehaviour
 
         }
 
-        if (other.tag == "KoliaLeft")
+        if (other.tag == "KoliaLeft" || other.tag == "KoliaRight")
         {
             smokeTrail.Stop();
         }

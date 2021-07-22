@@ -18,6 +18,8 @@ TagManager:
   - Success
   - Wheelie
   - PipeTrap
+  - GasTank
+  - Billboard
   layers:
   - Default
   - TransparentFX
