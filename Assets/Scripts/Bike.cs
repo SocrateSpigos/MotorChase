@@ -113,7 +113,7 @@ public class Bike : MonoBehaviour
             canvas.SetBool("Busted", true);
             
 
-            GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
+            //GameObject.Find("Traffic_light").GetComponent<Animator>().enabled = false;
 
 
             StartCoroutine(BikeCoroutine());

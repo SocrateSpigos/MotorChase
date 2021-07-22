@@ -12,6 +12,7 @@ public class CopCar : MonoBehaviour
     public GameObject arrest;
     public GameObject arrest2;
     public GameObject arrest3;
+    public GameObject arrest4;
     public GameObject success;
     public GameObject trafficLight;
 
@@ -38,10 +39,9 @@ public class CopCar : MonoBehaviour
 
         }
 
-        if (other.tag == "LampPost" || other.tag == "PipeTrap")
+        if (other.tag == "LampPost")
         {
             copCar.SetBool("Boom", true);
-            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest.SetActive(false);
 
@@ -50,7 +50,6 @@ public class CopCar : MonoBehaviour
         if (other.tag == "PipeTrap")
         {
             copCar.SetBool("Boom", true);
-            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest2.SetActive(false);
 
@@ -59,9 +58,8 @@ public class CopCar : MonoBehaviour
         if (other.tag == "Billboard")
         {
             copCar.SetBool("Boom", true);
-            //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
-            arrest.SetActive(false);
+            arrest4.SetActive(false);
 
         }
 
