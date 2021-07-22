@@ -137,10 +137,9 @@ public class Bike : MonoBehaviour
 
         if (other.tag == "Success")
         {
-            smokeTrail.Play();
-
-            bike.SetBool("Busted", true);
             isSuccess = true;
+            smokeTrail.Play();
+            bike.SetBool("Busted", true);
             StartCoroutine(BikeCoroutine());
 
         }

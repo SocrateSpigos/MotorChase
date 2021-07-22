@@ -8,6 +8,7 @@ public class Success : MonoBehaviour
     public Transform Camera;
     float Speed= 2f;
     private bool isLerp = false;
+    public bool isSuccess = false;
 
     public GameObject kissCine;
     public GameObject Player;
@@ -42,6 +43,7 @@ public class Success : MonoBehaviour
         {
 
             isLerp = true;
+            isSuccess = true;
 
         }
 

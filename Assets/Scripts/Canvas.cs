@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Canvas : MonoBehaviour
 {
-
+    public Success success;
     public Bike bike;
     public GameObject Restart;
     public GameObject Continue;
@@ -19,8 +19,9 @@ public class Canvas : MonoBehaviour
 
         } 
         
-        if (bike.isSuccess)
+        if (success.isSuccess)
         {
+            Debug.Log("IsSuccess");
             StartCoroutine(ContinueCoroutine());
 
         }
@@ -29,7 +30,12 @@ public class Canvas : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("TestingScene");
+        SceneManager.LoadScene("Level1");
+    }
+    
+    public void ContinueButton()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
     IEnumerator RestartCoroutine()
@@ -45,6 +51,8 @@ public class Canvas : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         Continue.SetActive(true);
+        Debug.Log("SetActive");
+
 
     }
 }

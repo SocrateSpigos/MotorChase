@@ -7194,6 +7194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d00834972d99a4cbcea91f0584a497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  success: {fileID: 788021464}
   bike: {fileID: 1605006462}
   Restart: {fileID: 1076583364}
   Continue: {fileID: 2004517905}
@@ -16605,6 +16606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NewCameraPos: {fileID: 1620624974}
   Camera: {fileID: 2075493028}
+  isSuccess: 0
   kissCine: {fileID: 1245914560}
   Player: {fileID: 1536855662}
   cam: {fileID: 2061339307}
@@ -44055,7 +44057,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 366345054}
         m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: RestartButton
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
