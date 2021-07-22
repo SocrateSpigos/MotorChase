@@ -73,7 +73,6 @@ public class Bike : MonoBehaviour
         
         if (other.tag == "Wheelie")
         {            
-            
 
             bike.SetBool("Wheelie", true);
             Debug.Log("Wheelie");
@@ -96,9 +95,8 @@ public class Bike : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
 
-        bike.SetBool("KoliaLeft", false);
-        bike.SetBool("KoliaRight", false);
-        bike.SetBool("Wheelie", false);
+        //bike.SetBool("KoliaRight", false);
+        //bike.SetBool("Wheelie", false);
 
         if (other.tag == "Arrest")
         {
@@ -119,6 +117,24 @@ public class Bike : MonoBehaviour
             StartCoroutine(BikeCoroutine());
         }
 
+        if (other.tag == "KoliaLeft")
+        {
+            bike.SetBool("KoliaLeft", false);
+
+        }
+        
+        if (other.tag == "KoliaRight")
+        {
+            bike.SetBool("KoliaRight", false);
+
+        }
+
+        if (other.tag == "Wheelie")
+        {
+            bike.SetBool("Wheelie", false);
+
+        }
+
         if (other.tag == "Success")
         {
             smokeTrail.Play();
@@ -126,8 +142,6 @@ public class Bike : MonoBehaviour
             bike.SetBool("Busted", true);
             isSuccess = true;
             StartCoroutine(BikeCoroutine());
-
-
 
         }
 
