@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class CopHealthBar : MonoBehaviour
 {
 
-    public Image Bar;
+    protected Image Bar;
     protected Image BarFilled;
     public GameObject BarPrefab;
     public Vector3 offset = new Vector3(0, 0, 0);
     public float Fill=1;
+    private Image tempBar;
+    private Image tempBar2;
 
 
     // Start is called before the first frame update
@@ -19,6 +21,9 @@ public class CopHealthBar : MonoBehaviour
         Fill = 1f;
         Bar = Instantiate(BarPrefab, FindObjectOfType<Canvas>().transform).GetComponent<Image>(); 
         BarFilled = new List<Image>(Bar.GetComponentsInChildren<Image>()).Find(img => img != Bar);
+        /*tempBar = Bar;
+        tempBar = BarFilled;*/
+
     }
 
     void Update()
@@ -28,15 +33,15 @@ public class CopHealthBar : MonoBehaviour
             BarFilled.fillAmount = Fill;
         
         
-        if (Fill <=0)
-        {
-            Destroy(Bar);
-        }
+       
     }
 
     public void OnMouseDown()
     {
         Fill -= 0.01f;
+        //Destroy(tempBar);
+       // Destroy(tempBar2);
+
     }
 
     public void Die()

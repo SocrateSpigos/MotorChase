@@ -15,7 +15,7 @@ public class CopCar : MonoBehaviour
     public GameObject arrest4;
     public GameObject success;
     public GameObject trafficLight;
-    public CopHealthBar copHealth;
+    public Player copHealth;
 
 
     void Start()
@@ -45,7 +45,7 @@ public class CopCar : MonoBehaviour
             copCar.SetBool("Boom", true);
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest.SetActive(false);
-            copHealth.Die();
+            gameObject.GetComponent<Player>().Die();
 
         }
 
@@ -54,7 +54,7 @@ public class CopCar : MonoBehaviour
             copCar.SetBool("Boom", true);
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest2.SetActive(false);
-            copHealth.Die();
+            gameObject.GetComponent<Player>().Die();
 
         }
 
@@ -63,7 +63,7 @@ public class CopCar : MonoBehaviour
             copCar.SetBool("Boom", true);
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest4.SetActive(false);
-            copHealth.Die();
+            gameObject.GetComponent<Player>().Die();
 
 
         }
@@ -75,8 +75,7 @@ public class CopCar : MonoBehaviour
             arrest2.SetActive(false);
             //GameObject.Find("CopParent").GetComponent<Animator>().enabled = false;
             //(cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
-            copHealth.Die();
-
+            gameObject.GetComponent<Player>().Die();
             StartCoroutine(CopCoroutine());
         }
 
@@ -87,8 +86,7 @@ public class CopCar : MonoBehaviour
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest3.SetActive(false);
             success.SetActive(true);
-            copHealth.Die();
-
+            gameObject.GetComponent<Player>().Die();
 
         }
 
@@ -98,7 +96,7 @@ public class CopCar : MonoBehaviour
             Debug.Log("Bridge");
             (cop.GetComponent(PathFollower) as MonoBehaviour).enabled = false;
             arrest3.SetActive(false);
-            copHealth.Die();
+            gameObject.GetComponent<Player>().Die();
 
 
         }
