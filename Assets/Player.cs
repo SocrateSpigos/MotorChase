@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 	public void OnMouseDown()
 	{
 		TakeDamage(20);
+		healthUI.SetActive(true);
 
 	}
 
@@ -52,8 +53,7 @@ public class Player : MonoBehaviour
     {
 		currentHealth -= 1000;
 
-		healthUI.SetActive(false);
-
+		Destroy(healthUI);
 	}
 
 }
