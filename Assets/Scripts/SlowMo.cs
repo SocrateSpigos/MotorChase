@@ -4,7 +4,7 @@ public class SlowMo : MonoBehaviour
 {
 
     public float slowdownFactor=0.05f;
-    public float slowdownLength = 2f;
+    public float slowdownLength ;
 
  
     void Update()
