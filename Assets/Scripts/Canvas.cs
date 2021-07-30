@@ -32,7 +32,8 @@ public class Canvas : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
-    
+
+
     public void ContinueButton()
     {
         SceneManager.LoadScene("Level2");
