@@ -24959,7 +24959,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 366345054}
         m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: RestartButton
+        m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37033,7 +37033,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 366345054}
         m_TargetAssemblyTypeName: Canvas, Assembly-CSharp
-        m_MethodName: ContinueButton
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
