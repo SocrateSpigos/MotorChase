@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FastMo : MonoBehaviour
 {
+    public float faster;
     
     void Update()
     {
-        Time.timeScale = Time.timeScale * 1.2f;
+        Time.timeScale = Time.timeScale * faster;
     }
 }

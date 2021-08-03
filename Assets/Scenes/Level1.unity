@@ -18351,6 +18351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3018a00d088ffd448845437961579479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faster: 1.2
 --- !u!4 &760752741
 Transform:
   m_ObjectHideFlags: 0
@@ -34187,6 +34188,7 @@ MonoBehaviour:
   MainCam: {fileID: 2075493021}
   Speed: 4
   LookAt: LookAt
+  TargetSelector: TargetSelector
   camera: {fileID: 1323624182}
   panel: {fileID: 1737701973}
 --- !u!114 &1323624184
@@ -56501,7 +56503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075493021}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aff808865cb8d3499680b96626a636c, type: 3}
   m_Name: 

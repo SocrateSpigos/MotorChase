@@ -29,7 +29,8 @@ public class Success : MonoBehaviour
 
             PositionChanging();
             kissCine.SetActive(true);
-            Player.SetActive(false);
+            //Player.SetActive(false);
+            Destroy(Player, 0.5f);
 
         }
     }

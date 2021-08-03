@@ -11,8 +11,10 @@ public class StartingScene : MonoBehaviour
     public float Speed;
     private bool isLerp = false;
     public string LookAt;
+    public string TargetSelector;
     public GameObject camera;
     public GameObject panel;
+
 
 
     void Start()
@@ -47,6 +49,7 @@ public class StartingScene : MonoBehaviour
         isLerp = true;
         (camera.GetComponent(LookAt) as MonoBehaviour).enabled = true;
         panel.SetActive(false);
+        (MainCam.GetComponent(TargetSelector) as MonoBehaviour).enabled = true;
 
     }
 
@@ -54,6 +57,7 @@ public class StartingScene : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         CineCam.SetActive(false);
+
 
     }
 
