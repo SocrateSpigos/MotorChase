@@ -16,16 +16,14 @@ public class SlowMo : MonoBehaviour
     public void DoSlowmotion ()
     {
         Time.timeScale = slowdownFactor;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
+        Time.fixedDeltaTime = Time.timeScale * .01f;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("SlowMotion1");
 
         if (other.tag == "Player")
         {
-            Debug.Log("SlowMotion");
             DoSlowmotion();
 
         }
